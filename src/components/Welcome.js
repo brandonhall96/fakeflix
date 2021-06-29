@@ -58,16 +58,16 @@ const allMovies = movieData.map((mov, idx)=> {
        
 
             <div>
-            {allMovies[0]}
+            {allMovies}
             </div>
             <div>
-            {allMovies[1]}
+          
             </div>
             <div>
-            {allMovies[2]}
+         
             </div>
             <div>
-            {allMovies[3]}
+          
             </div>
         </div>
     )
