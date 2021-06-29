@@ -74,8 +74,9 @@ function App() {
             <Route path='/signup' component={ Signup } />
             <Route path='/login' render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} /> } />
             <Route path='/about' component={About} />
-            <Route exact path='/' component={Welcome} />
+            <PrivateRoute exact path='/' component={Welcome} user={currentUser} />
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
+            {/* <PrivateRoute path='/' component={Welcome} user={currentUser} /> */}
           
         </Switch>
       </div>
