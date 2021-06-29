@@ -6,6 +6,7 @@ import setAuthToken from './utils/setAuthToken';
 // CSS
 import './App.css';
 // Components
+import Home from './components/Home'
 import Welcome from './components/Welcome';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -73,8 +74,9 @@ function App() {
             {/* routes will go inside of here */}
             <Route path='/signup' component={ Signup } />
             <Route path='/login' render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} /> } />
+            <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
-            <PrivateRoute exact path='/' component={Welcome} user={currentUser} />
+            <PrivateRoute exact path='/welcome' component={Welcome} user={currentUser} />
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
             {/* <PrivateRoute path='/' component={Welcome} user={currentUser} /> */}
           
