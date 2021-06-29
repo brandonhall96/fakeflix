@@ -1,4 +1,9 @@
-import React from 'react';
+import setAuthToken from '../utils/setAuthToken'
+import axios from 'axios';
+import React , {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom';
+import App from '../App.css'
+const CONNECTION_URI = process.env.DB_URI || process.env.REACT_APP_SERVER_URL;
 
 const Welcome = () => {
 
@@ -14,10 +19,13 @@ useEffect(() =>{
     setAuthToken(localStorage.getItem("jwtToken"))
     axios.get(url)
     .then((res) =>{
-        setMovieData(res.data.rockets)
+        console.log(res.data.favorites)
+        setMovieData(res.data.favorites)
         
     })
 }, [])
+
+console.log(movieData)
 
 
 
@@ -31,3 +39,16 @@ useEffect(() =>{
 }
 
 export default Welcome;
+
+
+
+// import React from "react"
+// import ReactPlayer from "react-player"
+
+// function App() {
+//   return (
+//     <div>
+//       <ReactPlayer
+//         url="https://www.youtube.com/watch?v=ug50zmP9I7s"
+//       />
+//     </div>
