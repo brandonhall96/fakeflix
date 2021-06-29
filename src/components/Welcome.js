@@ -3,7 +3,7 @@ import axios from 'axios';
 import React , {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom';
 import App from '../App.css'
-const CONNECTION_URI = process.env.DB_URI || process.env.REACT_APP_SERVER_URL;
+const CONNECTION_URI = process.env.DB_URI || 'http://localhost:8000';
 
 const Welcome = (props) => {
 
@@ -50,7 +50,7 @@ const allMovies = movieData.map((mov, idx)=> {
 
 
 
-//we will need to use a .map to itterate and render all data needed
+
 
     return (
         <div>
