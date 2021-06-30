@@ -4,6 +4,7 @@ import React , {useState, useEffect} from 'react'
 import App from '../App.css'
 const CONNECTION_URI = process.env.DB_URI || 'http://localhost:8000';
 
+
 const Welcome = (props) => {
 
 const [movieData, setMovieData] = useState([]);
@@ -30,24 +31,20 @@ useEffect(() => {
 
 
 const allMovies = movieData.map((mov, idx)=> {
-    return <div className="moves" key={idx}>
-        
-        <div>
-        <h3>{mov.Title}</h3>
-        <br></br>
-        <p>{mov.Year}</p>
-        <br></br>
-        <p>{mov.Rated}</p>
-        
-        <button type='submit'>Add to Watchlist</button>
-        <button type='submit'>Add to Favorites</button>
-        <br></br>
-        <img src={mov.Poster}></img>
-        </div>
-        </div>
 
-      
-    
+    return <div class='card-deck' key={idx}>
+                <div className="card">
+                    <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />                       <div class="card-body">
+                        <h2 class="card-title">{mov.Title}</h2>
+                        <p class="card-text">{mov.Year}</p>
+                        <p class="card-text">{mov.Rated}</p>
+                    
+
+                        </div>
+                </div>
+        
+
+       </div>
 
         
 
@@ -55,9 +52,7 @@ const allMovies = movieData.map((mov, idx)=> {
 
     return (
         <div>
-            <h1>All the Movies will be displayed here from our own api call</h1>
-       
-            <div>
+            <div id="moviediv" className="movie-grid">
             {allMovies}
             </div>
          
