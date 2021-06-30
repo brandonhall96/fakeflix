@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import App from '../App.css'
 
 const Navbar = (props) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
-                <Link className="navbar-brand" to="/">Fakeflix</Link>
+                <Link id="navbarheader" className="navbar-brand" to="/">Fakeflix</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -16,6 +17,12 @@ const Navbar = (props) => {
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link"  to="/about">About</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link"  to="/welcome">Movies</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link"  to="/favorites">Favorites</NavLink>
                         </li>
                     </ul>
                     {

@@ -23,3 +23,40 @@ h1 {
     justify-content: space-around;
 } */
 
+
+
+
+/* h3 {
+    color: white;
+} */
+
+/* p {
+    color: white;
+} */
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: -2px;
+    
+    
+
+
+}
+
+.poster {
+    width: 250px;
+    height: 350px;
+}
+
+#moviediv {
+    /* border: solid 1px red; */
+}
+
+.singlemoviebox {
+    border: solid 1px red;
+}
+
+#navbarheader {
+    color: red;
+}
