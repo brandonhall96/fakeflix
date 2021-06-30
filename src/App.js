@@ -14,6 +14,7 @@ import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import About from './components/About';
+import Favorites from './components/Favorites';
 
 //private route component
 const PrivateRoute = ({ component: Component, ...rest}) => {
@@ -77,6 +78,7 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
             <PrivateRoute exact path='/welcome' component={Welcome} user={currentUser}  />
+            <PrivateRoute exact path='/favorites' component={Favorites} user={currentUser}  />
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
             {/* <PrivateRoute path='/' component={Welcome} user={currentUser} /> */}
           

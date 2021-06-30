@@ -45,8 +45,12 @@ const allMovies = movieData.map((mov, idx)=> {
         <img src={mov.Poster}></img>
         </div>
         </div>
+
       
     
+
+        
+
 })
 
     return (
