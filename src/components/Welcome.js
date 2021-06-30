@@ -13,7 +13,7 @@ useEffect(() =>{
     setAuthToken(localStorage.getItem("jwtToken"))
     axios.get(url)
     .then((res) =>{
-        console.log(res.data.movies)
+        
         setMovieData(res.data.movies)
         
     })
@@ -31,17 +31,26 @@ useEffect(() => {
 
 const allMovies = movieData.map((mov, idx)=> {
     return <div className="moves" key={idx}>
+        
         <div>
-        <h1>{mov.Title}</h1>
+        <h3>{mov.Title}</h3>
         <br></br>
-        <h3>{mov.Year}</h3>
+        <p>{mov.Year}</p>
         <br></br>
-        <h3>{mov.Rated}</h3>
+        <p>{mov.Rated}</p>
+        
+        <button type='submit'>Add to Watchlist</button>
+        <button type='submit'>Add to Favorites</button>
+        <br></br>
         <img src={mov.Poster}></img>
         </div>
-      
         </div>
+
+      
+    
+
         
+
 })
 
     return (
