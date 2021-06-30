@@ -31,6 +31,7 @@ useEffect(() => {
 
 
 const allMovies = movieData.map((mov, idx)=> {
+
     return <div class='card-deck' key={idx}>
                 <div className="card">
                     <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />                       <div class="card-body">
@@ -44,8 +45,9 @@ const allMovies = movieData.map((mov, idx)=> {
         
 
        </div>
-      
-    
+
+        
+
 })
 
     return (
