@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-const REACT_APP_SERVER_URL = 'http://localhost:8000'
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = () => {
     //we are declaring these to use in our form as empty text boxes!
