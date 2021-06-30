@@ -34,7 +34,7 @@ const allMovies = movieData.map((mov, idx)=> {
     return <div class='card-deck' key={idx}>
                 <div className="card">
                     <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />                       <div class="card-body">
-                        <h2 class="card-title">{mov.Title}</h2>
+                        <h3 class="card-title">{mov.Title}</h3>
                         <p class="card-text">{mov.Year}</p>
                         <p class="card-text">{mov.Rated}</p>
                     
