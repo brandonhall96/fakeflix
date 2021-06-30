@@ -41,6 +41,7 @@ const allMovies = movieData.map((mov, idx)=> {
         </div>
       
         </div>
+        
 })
 
     return (
