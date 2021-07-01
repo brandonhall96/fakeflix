@@ -213,7 +213,6 @@ a {
    
 }
 
-a:hover {
-    text-decoration:none; 
-    cursor:pointer;  
+a {
+    color: white;
 }
