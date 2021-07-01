@@ -76,11 +76,11 @@ h2 {
 #navbarheader {
     color: red;
 }
-
+/* 
 .navBar{
     background: lightgray;
     z-index: 2;
-}
+} */
 
 .specialButton{
     color: rgb(243, 0, 0);
@@ -93,7 +93,7 @@ h2 {
     padding: 3px 15px;
     border-radius: 5px;
     border: 2px solid rgba(255,255,255,0.2);
-    box-shadow: 4px 4px 0 rgba(251, 1, 1, 0.3), 8px 8px 0 rgba(240, 5, 5, 0.2);
+    box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.541), 8px 8px 0 rgba(180, 180, 180, 0.363);
     position: relative;
     z-index: 1;
     transition: all 0.3s ease 0.1s;
@@ -190,3 +190,19 @@ h2 {
     background-position: 100% 0;
   }
 } */
+
+
+.homeCardPic {
+    filter: opacity(90%);
+    filter: color rgba(0, 0, 0, 0.932)
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration:none; 
+    cursor:pointer;  
+}
