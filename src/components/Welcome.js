@@ -14,8 +14,7 @@ useEffect(() =>{
     axios.get(url)
     .then((res) =>{
         console.log(res.data.movies)
-        setMovieData(res.data.movies)
-        
+        setMovieData(res.data.movies)      
     })
 }, [])
 
