@@ -14,7 +14,7 @@ useEffect(() =>{
     setAuthToken(localStorage.getItem("jwtToken"))
     axios.get(url)
     .then((res) =>{
-        
+        console.log(res.data.movies) 
         setMovieData(res.data.movies)
         
     })
