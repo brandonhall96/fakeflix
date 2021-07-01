@@ -4,6 +4,7 @@ import React , {useState, useEffect} from 'react'
 import App from '../App.css'
 const CONNECTION_URI = process.env.DB_URI || 'http://localhost:8000';
 
+
 const Welcome = (props) => {
 
 const [movieData, setMovieData] = useState([]);
@@ -13,8 +14,9 @@ useEffect(() =>{
     setAuthToken(localStorage.getItem("jwtToken"))
     axios.get(url)
     .then((res) =>{
-        console.log(res.data.movies)
-        setMovieData(res.data.movies)      
+        console.log(res.data.movies) 
+        setMovieData(res.data.movies)
+        
     })
 }, [])
 
@@ -29,25 +31,28 @@ useEffect(() => {
 
 
 const allMovies = movieData.map((mov, idx)=> {
-    return <div className="moves" key={idx}>
-        <div>
-        <h1>{mov.Title}</h1>
-        <br></br>
-        <h3>{mov.Year}</h3>
-        <br></br>
-        <h3>{mov.Rated}</h3>
-        <img src={mov.Poster}></img>
-        </div>
-      
-        </div>
+
+    return <div class='card-deck' key={idx}>
+                <div className="card">
+                    <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />                       <div class="card-body">
+                        <h2 class="card-title">{mov.Title}</h2>
+                        <p class="card-text">{mov.Year}</p>
+                        <p class="card-text">{mov.Rated}</p>
+                    
+
+                        </div>
+                </div>
         
+
+       </div>
+
+        
+
 })
 
     return (
         <div>
-            <h1>All the Movies will be displayed here from our own api call</h1>
-       
-            <div>
+            <div id="moviediv" className="movie-grid">
             {allMovies}
             </div>
          
