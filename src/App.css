@@ -34,7 +34,9 @@ h1 {
 .movie-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin: -2px;
+    margin: auto;
+    flex-wrap: wrap;
+
     
     
 
