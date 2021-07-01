@@ -48,7 +48,11 @@ h1 {
 
 
 
+
+
+
 h2 {
+
     color: white;
 }
 
@@ -57,10 +61,6 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin: auto;
     flex-wrap: wrap;
-
-    
-    
-
 
 }
 
@@ -202,6 +202,15 @@ h2 {
 a {
     color: black;
     text-decoration: none;
+}
+
+
+#profilebutt {
+    color: white;
+    background-color: red;
+    border-radius: 6px;
+    padding: 10px 24px;
+   
 }
 
 a:hover {
