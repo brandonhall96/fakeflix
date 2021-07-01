@@ -27,19 +27,15 @@ h1 {
     color: white;
 } */
 
-/* p {
+p {
     color: white;
-} */
+}
 
 .movie-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin: auto;
     flex-wrap: wrap;
-
-    
-    
-
 
 }
 
@@ -60,3 +56,10 @@ h1 {
     color: red;
 }
 
+#profilebutt {
+    color: white;
+    background-color: red;
+    border-radius: 6px;
+    padding: 10px 24px;
+   
+}

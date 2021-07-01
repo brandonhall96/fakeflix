@@ -45,7 +45,7 @@ const allMovies = movieData.map((mov, idx)=> {
     return <div class="row row-cols-1 row-cols-md-3" key={idx}>
                 <div className="col mb-4" key={idx}>
                     <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />     
-                            <button id='butt1' type='submit' onClick={handleAddFavorite}>+ Favorites</button>
+                            <button id='butt1' type='submit'>+ Favorites</button>
                             <button id='butt2' type='submit'>+ Watchlist</button>
                             
 
