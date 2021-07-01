@@ -30,11 +30,11 @@ useEffect(() => {
 },[movieData])
 
 
-const handleAddFavorite = (e) => {
+// const handleAddFavorite = (e) => {
 
-    axios.post(`${CONNECTION_URI}+/api/movies/favorites`, movieData)
+//     axios.post(`${CONNECTION_URI}+/api/movies/favorites`, movieData)
 
-}
+// }
 
 
 //write a function to add the favorited movie to the daabase and make an api call to favorites on the favoirtes page
@@ -44,10 +44,9 @@ const allMovies = movieData.map((mov, idx)=> {
 
     return <div class="row row-cols-1 row-cols-md-3" key={idx}>
                 <div className="col mb-4" key={idx}>
-                    <img class="card-img-top" src={mov.Poster} alt="Card image cap"  /> 
-                    <p>{mov.Title}</p>         
-                            <button type='submit' onClick={handleAddFavorite}>+ Favorites</button>
-                            <button type='submit'>+ Watchlist</button>
+                    <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />     
+                            <button id='butt1' type='submit' onClick={handleAddFavorite}>+ Favorites</button>
+                            <button id='butt2' type='submit'>+ Watchlist</button>
                             
 
                         </div>
