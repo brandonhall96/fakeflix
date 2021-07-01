@@ -28,7 +28,7 @@ const Favorite = () => {
 
 //----pass props from movies into favorites---// 
 
-//--> whatever button thats clicked on for that movie is saved into the database
+//--> whatever button thats clicked on for that movie is saved into the favorites api -- get or show? 
 
 //once saved -- use history.push that will go to the links favorites page
 
