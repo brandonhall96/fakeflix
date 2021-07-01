@@ -38,6 +38,8 @@ const allMovies = movieData.map((mov, idx)=> {
                         <h2 class="card-title">{mov.Title}</h2>
                         <p class="card-text">{mov.Year}</p>
                         <p class="card-text">{mov.Rated}</p>
+                        <button type='submit'>+ Favorites</button>
+                        <button type='submit'>+ Watchlist</button>
                     
 
                         </div>
