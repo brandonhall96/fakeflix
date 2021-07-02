@@ -9,7 +9,7 @@ import './App.css';
 import Home from './components/Home'
 import Welcome from './components/Welcome';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -86,7 +86,6 @@ function App() {
           
         </Switch>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -2,27 +2,48 @@
 import setAuthToken from '../utils/setAuthToken' 
 import React from 'react'
 import axios from 'axios';
-const CONNECTION_URI = process.env.DB_URI || 'http://localhost:8000';
+import { useState, useEffect } from "react";
+// import {Link, Redirect} from 'react-router-dom'
+
+
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Favorite = () => {
-// const [favorites, setFavorites] = useState([])
+const [favorites, setFavorites] = useState([])
 
-//     useEffect(()=> {
-//         let url = CONNECTION_URI+"/api/movies"
-//         setAuthToken(localStorage.getItem("jwtToken"))
-//         axios.get(url)
-//         .then((res)=> {
-//             //setAstronauts and setting state in general is an asyncrynous action
-//             setFavorites(res.data)
-//             console.log(res.data.favorites)
-//             // console.log(astronauts)
-//             console.log("here is favorites in the initial useEffect")
-//         })
+    useEffect(()=> {
+        let url = REACT_APP_SERVER_URL+"/api/favorites"
+        setAuthToken(localStorage.getItem("jwtToken"))
+        axios.get(url)
+        .then((res)=> {
+            setFavorites(res.data.favorites)
+            console.log("here is favorites in the initial useEffect")
+        })
+    },[])
 
-//     },[])
+   
+    const favMovie = favorites.map((fav, idx ) => {
+        return <div class="row row-cols-1 row-cols-md-3" key={idx}>
+            <img class="card-img-top" src={fav.Poster} alt="Card image cap"  />
+        </div>
+
+    })
+
 
     return (
-        <h1>favorites list</h1>
+        
+            <div className="row mt-4">
+            <div className="col-md-8 offset-md-3">
+            
+                <div className="card card-body">
+                <div className="text-center"></div>
+                {/* <div id="moviediv" className="movie-grid"> */}
+            {favMovie}
+            </div>
+        </div>
+        </div>
+        // </div>
+        
     )
 }
 
