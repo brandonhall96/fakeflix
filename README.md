@@ -40,4 +40,29 @@ useEffect(() => {
 },[movieData])
 ```
 
+# Rendering the data
+```
+const allMovies = movieData.map((mov, idx)=> {
+
+    return <div class="row row-cols-1 row-cols-md-3" key={idx}>
+                <div className="col mb-4" key={idx}>
+                    <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />
+                            <button className='movies' className='specialButton' type='submit' onClick={() => handleFavorite(mov)}>+ Favorites</button>{' '}
+                            <button className='movies' className='specialButton' type='submit'>+ Watchlist</button>{' '}
+                </div>
+            </div>
+})
+
+    return (
+        <div>
+            <div id="moviediv" className="movie-grid">
+            {allMovies}
+            </div>
+        </div>
+    )
+}
+
+export default Welcome;
+```
+
 
