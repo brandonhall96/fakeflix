@@ -228,3 +228,8 @@ p {
 .py-2 {
     color: red;
 }
+
+.favTitle {
+    color: red;
+    font-family: 'Roboto', sans-serif;
+}

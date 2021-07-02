@@ -25,12 +25,12 @@ const Home = () => {
                         <Link
                             className="signup"
                             to="/signup"
-                            style={{ textDecoration: 'none' }}>Sign Up</Link></button>{" "}
+                            style={{ textDecoration: 'none', color: 'red' }}>Sign Up</Link></button>{" "}
                         <button type="button" className="specialButton">
                         <Link
                             className="login"
                             to="/login"
-                            style={{ textDecoration: 'none' }}>Login</Link></button>
+                            style={{ textDecoration: 'none', color: 'black' }}>Login</Link></button>
                 </div>
             </div>
         </div>

@@ -23,8 +23,12 @@ const [favorites, setFavorites] = useState([])
 
    
     const favMovie = favorites.map((fav, idx ) => {
+        console.log(fav)
         return <div class="row row-cols-1 row-cols-md-3" key={idx}>
+            <h1 className="favTitle">{fav.Title}</h1>
             <img class="card-img-top" src={fav.Poster} alt="Card image cap"  />
+            
+            
         </div>
 
     })
@@ -32,7 +36,8 @@ const [favorites, setFavorites] = useState([])
 
     return (
         
-            <div className="row mt-4">
+            <div className="row mt-4" className= "text-center">
+                <h1>ALL YOUR FAVORITES</h1>
             <div className="col-md-8 offset-md-3">
             
                 <div className="card card-body">
@@ -47,12 +52,10 @@ const [favorites, setFavorites] = useState([])
     )
 }
 
-//----pass props from movies into favorites---// 
+//step 1: wrapping fav movie poster in a link so it links to new page
+//app.js set up route to render favorite detail component
+//when you go to that component, it makes request to api for that id provided by fav data
+//wrap map in a link --> /fav/id 
 
-//--> whatever button thats clicked on for that movie is saved into the favorites api -- get or show? 
-
-//once saved -- use history.push that will go to the links favorites page
-
-//find user, find all favorites from collection 
 
 export default Favorite;
