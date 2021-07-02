@@ -16,3 +16,6 @@ https://brandonhall96.github.io/fakeflix/
 
 ## Start Up Screen
 ![Starting screen](/public/photos/read.jpeg)
+
+
+
