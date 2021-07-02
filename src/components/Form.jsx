@@ -26,14 +26,15 @@ const handleEmail = (e) => {
 //===========SUBMIT-FORM=====================//
 const handleSubmit = async (e) => {
     e.preventDefault();
-    const payload = {name, email }
-    let url = CONNECTION_URI+"/api/profiles"
+    const payload = {name, email, }
+    let url = CONNECTION_URI+"/api/users/"+ props.user.id
+    console.log(props.user.id)
     console.log(`Yo - database ${url} is working!!`)   
     await setAuthToken(localStorage.getItem("jwtToken"))
     axios.put(url, payload)
     .then( res => {
         console.log(res.data);
-        props.history.push('/profiles')
+        props.history.push('/profile')
     })
     .catch(err => {
         console.log(err)
