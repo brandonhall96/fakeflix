@@ -30,10 +30,10 @@ const handleSubmit = async (e) => {
     let url = CONNECTION_URI+"/api/profiles"
     console.log(`Yo - database ${url} is working!!`)   
     await setAuthToken(localStorage.getItem("jwtToken"))
-    axios.post(url, payload)
+    axios.put(url, payload)
     .then( res => {
         console.log(res.data);
-        props.history.push('/profile')
+        props.history.push('/profiles')
     })
     .catch(err => {
         console.log(err)
