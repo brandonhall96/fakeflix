@@ -16,6 +16,7 @@ import Login from './components/Login';
 import About from './components/About';
 import Favorite from './components/Favorite';
 import Form from './components/Form';
+import FavDetail from './components/FavDetail'
 
 //private route component
 const PrivateRoute = ({ component: Component, ...rest}) => {
@@ -79,9 +80,11 @@ function App() {
             <Route exact path='/' component={Home} />
             {/* <Route path='/about' component={About} /> */}
             <PrivateRoute exact path='/welcome' component={Welcome} user={currentUser}  />
-            <PrivateRoute path='/favorites' component={Favorite} user={currentUser}  />
+            <PrivateRoute path='/favorites' component= {Favorite} user={currentUser}  />
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
             <PrivateRoute path = '/form' component={Form} user={currentUser} />
+            <PrivateRoute path = '/details/:id' component={(props) => <FavDetail {...props} user={currentUser} /> } />
+
             {/* <PrivateRoute path='/' component={Welcome} user={currentUser} /> */}
           
         </Switch>
@@ -89,5 +92,9 @@ function App() {
     </div>
   );
 }
+
+//add id to path string using params syntax from react router
+//for component pass a callback function that returns a fav detail component -> 
+//book detail for reference -> 
 
 export default App;

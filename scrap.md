@@ -46,3 +46,16 @@
     background-position: 100% 0;
   }
 }
+
+
+
+    // const favMovieDetail = favoriteDetail.map((detail, idx) => {
+    //     console.log(detail)
+    //     return <div class="row row-cols-1 row-cols-md-3" key={idx}>
+    //         <h1 className="favTitle">{detail.Title}</h1>
+    //         <img class="card-img-top" src={detail.Poster} alt="Card image cap" />
+
+    //     </div>
+
+
+    // })
