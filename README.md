@@ -96,6 +96,4 @@ const userData = props.user ?
     );
 ```
 
-![profile](/public/photos/profile.jpeg)
-
 # Future considerations
