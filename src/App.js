@@ -15,6 +15,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import About from './components/About';
 import Favorite from './components/Favorite';
+import Form from './components/Form';
 
 //private route component
 const PrivateRoute = ({ component: Component, ...rest}) => {
@@ -76,15 +77,15 @@ function App() {
             <Route path='/signup' component={ Signup } />
             <Route path='/login' render={(props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} /> } />
             <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
+            {/* <Route path='/about' component={About} /> */}
             <PrivateRoute exact path='/welcome' component={Welcome} user={currentUser}  />
             <PrivateRoute path='/favorites' component={Favorite} user={currentUser}  />
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
+            <PrivateRoute path = '/form' component={Form} user={currentUser} />
             {/* <PrivateRoute path='/' component={Welcome} user={currentUser} /> */}
           
         </Switch>
       </div>
-      
     </div>
   );
 }

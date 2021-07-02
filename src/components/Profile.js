@@ -14,10 +14,10 @@ const Profile = (props) => {
     }
     const userData = props.user ? 
     (<div>
-        <h1>Profile</h1>
-        <p><strong>Name:</strong> { name }</p> 
-        <p><strong>Email:</strong> { email }</p> 
-        <p><strong>ID:</strong> { id }</p>
+        <h1 style={{color: 'red'}}>Profile</h1>
+        <p style={{color: 'red'}}><strong>Name:</strong> { name }</p> 
+        <p style={{color: 'red'}}><strong>Email:</strong> { email }</p> 
+        <p style={{color: 'red'}}><strong>ID:</strong> { id }</p>
     </div>) : <h4>Loading...</h4>
 
     const errorDiv = () => {
@@ -29,9 +29,20 @@ const Profile = (props) => {
     };
     
     return (
-        <div>
-            { props.user ? userData : errorDiv() }
+        <div className="text-center pt-4">
+            <div className="col-md-8 offset-md-3">
+                <div className="card card-body">
+                    <div className='text-center'>
+
+                    {props.user ? userData : errorDiv()}
+
+                    <button type="button" id="profilebutt" ><Link className="edit" to="/form">Edit Profile</Link></button>
+
+                    </div>
+                </div>
+            </div>
         </div>
+        
     );
 
 }
