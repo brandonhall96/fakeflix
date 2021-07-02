@@ -8,6 +8,7 @@ const setAuthToken = (token) => {
     if (token) {
         //apply the token to every request header
         axios.defaults.headers.common['Authorization'] = token;
+        // axios.defaults.headers.common['Content-Type'] = 'application/json';
         console.log('---Headers----------');
         console.log(axios.defaults.headers.common)
 

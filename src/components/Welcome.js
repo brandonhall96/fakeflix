@@ -30,24 +30,17 @@ useEffect(() => {
 },[movieData])
 
 
-//--> whatever button thats clicked on for that movie is saved into the favorites api -- get or show? 
-
-//once saved -- use history.push that will go to the links favorites page
-
-//find user, find all favorites from collection 
-
-const handleFavorite = async (mov) => {
+const handleFavorite = (mov) => {
     let Poster = mov.Poster
     let Title = mov.Title
-    const payload = {Poster, Title}
+    let UserId = props.user.id
+    const payload = {Poster, Title, UserId}
     console.log('---payload---')
     console.log(payload)
     let url = CONNECTION_URI+"/api/favorites"
     console.log(`Yo - database ${url} is working!!`)  
-    await setAuthToken(localStorage.getItem("jwtToken"))
-    console.log(mov)
-    console.log(mov.Poster)
-    axios.post(url, payload)
+    // await setAuthToken(localStorage.getItem("jwtToken"))
+    axios.post(url, payload, {headers: {"Content-Type": "application/json"}})
     .then( res => {
         console.log(res.data);
         console.log('oompa loompa')
@@ -58,7 +51,6 @@ const handleFavorite = async (mov) => {
     })
 }
 
-//write a function to add the favorited movie to the daabase and make an api call to favorites on the favoirtes page
 
 const allMovies = movieData.map((mov, idx)=> {
 
