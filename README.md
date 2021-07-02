@@ -21,7 +21,7 @@ https://brandonhall96.github.io/fakeflix/
 
 The App uses React which allows us to make calls to our API on the backend and render data from our database. We were able to create a login and signup page that upon being submitted will talk to the backend to authenticate the profile. After youve been authenticated youll have access to the full site and being able to explore the different pages.
 
-# Making an API call
+# Making an API call to local database
 ```
 useEffect(() =>{
     let url = CONNECTION_URI+'/api/movies'
@@ -40,7 +40,7 @@ useEffect(() => {
 },[movieData])
 ```
 
-# Rendering the data
+# Rendering the data using .map
 ```
 const allMovies = movieData.map((mov, idx)=> {
 
@@ -64,5 +64,9 @@ const allMovies = movieData.map((mov, idx)=> {
 
 export default Welcome;
 ```
+
+# Login & Signup
+![Login Screen](/public/photos/login.jpeg)
+![Signup Screen](/public/photos/signup.jpeg)
 
 
