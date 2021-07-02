@@ -15,7 +15,7 @@ https://brandonhall96.github.io/fakeflix/
 4. You will have the option to click add favorite or add watchlist to view later
 
 ## Start Up Screen
-![Starting screen](/public/photos/read.jpeg)
+![Starting screen](/photos/read.jpeg)
 
 
 
