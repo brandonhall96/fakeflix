@@ -69,4 +69,33 @@ export default Welcome;
 ![Login Screen](/public/photos/login.jpeg)
 ![Signup Screen](/public/photos/signup.jpeg)
 
+# Profile page with the option to redirect to an edit page
+```
+const userData = props.user ? 
+    (<div>
+        <h1 style={{color: 'red'}}>Profile</h1>
+        <p style={{color: 'red'}}><strong>Name:</strong> { name }</p> 
+        <p style={{color: 'red'}}><strong>Email:</strong> { email }</p> 
+        <p style={{color: 'red'}}><strong>ID:</strong> { id }</p>
+    </div>) : <h4>Loading...</h4>
+```
 
+```
+  return (
+        <div className="text-center pt-4">
+            <div className="col-md-8 offset-md-2">
+                <div className="card card-body">
+                    <div className='text-center'>
+                        {props.user ? userData : errorDiv()}
+                        <button type="button" id="profilebutt" ><Link className="edit" to="/form">Edit Profile</Link></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    );
+```
+
+![profile](/public/photos/profile.jpeg)
+
+# Future considerations
