@@ -17,5 +17,27 @@ https://brandonhall96.github.io/fakeflix/
 ## Start Up Screen
 ![Starting screen](/public/photos/read.jpeg)
 
+# How it works
+
+The App uses React which allows us to make calls to our API on the backend and render data from our database. We were able to create a login and signup page that upon being submitted will talk to the backend to authenticate the profile. After youve been authenticated youll have access to the full site and being able to explore the different pages.
+
+# Making an API call
+```
+useEffect(() =>{
+    let url = CONNECTION_URI+'/api/movies'
+    setAuthToken(localStorage.getItem("jwtToken"))
+    axios.get(url)
+    .then((res) =>{
+        console.log(res.data.movies) 
+        setMovieData(res.data.movies)
+        
+    })
+}, [])
+
+useEffect(() => {
+    setAuthToken(localStorage.getItem("jwtToken"))   
+    
+},[movieData])
+```
 
 
