@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# FakeFlix
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Our App is called **FakeFlix** which is based off the well known movie streaming site 'Netflix'
 
-## Available Scripts
+It will demonstrate a combination of React, JavaScript, Express and MongoDB.
+The App is pretty self explanatory, once a profile has been created the user will be able to login, choose movies and add them to a favorites or watchlist.
 
-In the project directory, you can run:
+https://brandonhall96.github.io/fakeflix/
 
-### `yarn start`
+# How to use
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. First, you must create an account to have access to the website
+2. Once the account has been created you will be able to login
+3. Upon loggin in you will be automatically redirected to the movies
+4. You will have the option to click add favorite or add watchlist to view later
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Start Up Screen
+![Starting screen](/public/photos/read.jpeg)
 
-### `yarn test`
+# How it works
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The App uses React which allows us to make calls to our API on the backend and render data from our database. We were able to create a login and signup page that upon being submitted will talk to the backend to authenticate the profile. After youve been authenticated youll have access to the full site and being able to explore the different pages.
 
-### `yarn build`
+# Making an API call to local database
+```
+useEffect(() =>{
+    let url = CONNECTION_URI+'/api/movies'
+    setAuthToken(localStorage.getItem("jwtToken"))
+    axios.get(url)
+    .then((res) =>{
+        console.log(res.data.movies) 
+        setMovieData(res.data.movies)
+        
+    })
+}, [])
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+useEffect(() => {
+    setAuthToken(localStorage.getItem("jwtToken"))   
+    
+},[movieData])
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Rendering the data using .map
+```
+const allMovies = movieData.map((mov, idx)=> {
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    return <div class="row row-cols-1 row-cols-md-3" key={idx}>
+                <div className="col mb-4" key={idx}>
+                    <img class="card-img-top" src={mov.Poster} alt="Card image cap"  />
+                            <button className='movies' className='specialButton' type='submit' onClick={() => handleFavorite(mov)}>+ Favorites</button>{' '}
+                            <button className='movies' className='specialButton' type='submit'>+ Watchlist</button>{' '}
+                </div>
+            </div>
+})
 
-### `yarn eject`
+    return (
+        <div>
+            <div id="moviediv" className="movie-grid">
+            {allMovies}
+            </div>
+        </div>
+    )
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+export default Welcome;
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Login & Signup
+![Login Screen](/public/photos/login.jpeg)
+![Signup Screen](/public/photos/signup.jpeg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Profile page with the option to redirect to an edit page
+```
+const userData = props.user ? 
+    (<div>
+        <h1 style={{color: 'red'}}>Profile</h1>
+        <p style={{color: 'red'}}><strong>Name:</strong> { name }</p> 
+        <p style={{color: 'red'}}><strong>Email:</strong> { email }</p> 
+        <p style={{color: 'red'}}><strong>ID:</strong> { id }</p>
+    </div>) : <h4>Loading...</h4>
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+  return (
+        <div className="text-center pt-4">
+            <div className="col-md-8 offset-md-2">
+                <div className="card card-body">
+                    <div className='text-center'>
+                        {props.user ? userData : errorDiv()}
+                        <button type="button" id="profilebutt" ><Link className="edit" to="/form">Edit Profile</Link></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    );
+```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Future considerations

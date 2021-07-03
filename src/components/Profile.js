@@ -30,14 +30,11 @@ const Profile = (props) => {
     
     return (
         <div className="text-center pt-4">
-            <div className="col-md-8 offset-md-3">
+            <div className="col-md-8 offset-md-2">
                 <div className="card card-body">
                     <div className='text-center'>
-
-                    {props.user ? userData : errorDiv()}
-
-                    <button type="button" id="profilebutt" ><Link className="edit" to="/form">Edit Profile</Link></button>
-
+                        {props.user ? userData : errorDiv()}
+                        <button type="button" id="profilebutt" ><Link className="edit" to="/form">Edit Profile</Link></button>
                     </div>
                 </div>
             </div>

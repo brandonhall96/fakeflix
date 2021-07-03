@@ -30,6 +30,44 @@ const Welcome = (props) => {
 
     }, [movieData])
 
+useEffect(() =>{
+    let url = CONNECTION_URI+'/api/movies'
+    setAuthToken(localStorage.getItem("jwtToken"))
+    axios.get(url)
+    .then((res) =>{
+        console.log(res.data.movies) 
+        setMovieData(res.data.movies)
+        
+    })
+}, [])
+
+useEffect(() => {
+    setAuthToken(localStorage.getItem("jwtToken"))   
+    
+},[movieData])
+
+
+const handleFavorite = (mov) => {
+    let Poster = mov.Poster
+    let Title = mov.Title
+    let UserId = props.user.id
+    const payload = {Poster, Title, UserId}
+    console.log('---payload---')
+    console.log(payload)
+    let url = CONNECTION_URI+"/api/favorites"
+    console.log(`Yo - database ${url} is working!!`)  
+    // await setAuthToken(localStorage.getItem("jwtToken"))
+    axios.post(url, payload, {headers: {"Content-Type": "application/json"}})
+    .then( res => {
+        console.log(res.data);
+        console.log('oompa loompa')
+        props.history.push('/favorites')
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
 
     const handleFavorite = (mov) => {
         let Poster = mov.Poster
@@ -51,6 +89,7 @@ const Welcome = (props) => {
                 console.log(err)
             })
     }
+
 
 
     const allMovies = movieData.map((mov, idx) => {
