@@ -9,14 +9,15 @@ import './App.css';
 import Home from './components/Home'
 import Welcome from './components/Welcome';
 import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
 import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import About from './components/About';
 import Favorite from './components/Favorite';
 import Form from './components/Form';
 import FavDetail from './components/FavDetail'
+import Watch from './components/Watch'
+//import About from './components/About';
+// import Footer from './components/Footer';
 
 //private route component
 const PrivateRoute = ({ component: Component, ...rest}) => {
@@ -84,6 +85,9 @@ function App() {
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
             <PrivateRoute path = '/form' component={Form} user={currentUser} />
             <PrivateRoute path = '/details/:id' component={(props) => <FavDetail {...props} user={currentUser} /> } />
+            {/* <PrivateRoute path = '/watchlist/:id' component={(props) => <Watch {...props} user={currentUser} /> } /> */}
+            
+            
 
             {/* <PrivateRoute path='/' component={Welcome} user={currentUser} /> */}
           
