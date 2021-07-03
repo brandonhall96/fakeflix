@@ -25,18 +25,20 @@ const FavDetail = (props) => {
 
     const deleteDetail = async (id) => {
         //update to .env 
+        console.log(`${process.env.REACT_APP_SERVER_URL}/api/favorites/${id}`)
         console.log(id)
         setAuthToken(localStorage.getItem("jwtToken"))
         axios.delete(`${process.env.REACT_APP_SERVER_URL}/api/favorites/${id}`)
+        
             .then(response => {
                 setRedirect(true)
                 console.log(response.data)
-
+                props.history.push('/favorites')
             })
-
+            .catch( err => {props.history.push('/favorites')})
 
     };
-    if (redirect) return <Redirect to="/profile" />
+    if (redirect) return <Redirect to="/favorites" />
 
 
     return (
