@@ -38,7 +38,7 @@ const Watch = (props) => {
     return (
 
         <div className="row mt-4" className= "text-center">
-                <h1>ALL MOVIES IN YOUR WATCHLIST</h1>
+                <h1>ALL MOVIES IN YOUR WATCHLIST!!!!</h1>
             <div className="col-md-8 offset-md-3">
                 <div className="card card-body">
                 <div className="text-center"></div>
