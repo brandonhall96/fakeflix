@@ -91,6 +91,28 @@ useEffect(() => {
     }
 
 
+    const handleWatch = (mov) => {
+        let Poster = mov.Poster
+        let Title = mov.Title
+        let UserId = props.user.id
+        const payload = { Poster, Title, UserId }
+        console.log('---payload watch---')
+        console.log(payload)
+        let url = CONNECTION_URI + "/api/watchlists"
+        console.log(`Yo - database ${url} is working!!`)
+        // await setAuthToken(localStorage.getItem("jwtToken"))
+        axios.post(url, payload, { headers: { "Content-Type": "application/json" } })
+            .then(res => {
+                console.log(res.data);
+                console.log('oompa loompa')
+                props.history.push('/watchlists')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+
 
     const allMovies = movieData.map((mov, idx) => {
 
@@ -99,7 +121,7 @@ useEffect(() => {
 
                 <img class="card-img-top" src={mov.Poster} alt="Card image cap" />
                 <button className='movies' className='specialButton' type='submit' onClick={() => handleFavorite(mov)}>+ Favorites</button>{' '}
-                <button className='movies' className='specialButton' type='submit'>+ Watchlist</button>{' '}
+                <button className='movies' className='specialButton' type='submit' onClick={() => handleWatch(mov)} >+ Watchlist</button>{' '}
             </div>
 
         </div>

@@ -82,10 +82,12 @@ function App() {
             {/* <Route path='/about' component={About} /> */}
             <PrivateRoute exact path='/welcome' component={Welcome} user={currentUser}  />
             <PrivateRoute path='/favorites' component= {Favorite} user={currentUser}  />
+            <PrivateRoute path='/watchlist' component= {Watch} user={currentUser}  />
+            
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
             <PrivateRoute path = '/form' component={Form} user={currentUser} />
             <PrivateRoute path = '/details/:id' component={(props) => <FavDetail {...props} user={currentUser} /> } />
-            {/* <PrivateRoute path = '/watchlist/:id' component={(props) => <Watch {...props} user={currentUser} /> } /> */}
+            
             
             
 
