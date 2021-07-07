@@ -97,3 +97,8 @@ const userData = props.user ?
 ```
 
 # Future considerations
+
+1. Clicking on a movie will open a media player with the movie/trailer
+2. More movie categories
+3. Add more movies
+4. Cleaner update profile

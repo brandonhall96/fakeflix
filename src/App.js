@@ -53,6 +53,7 @@ function App() {
   const nowCurrentUser = userData => {
       console.log('inside now current user')
       setCurrentUser(userData)
+      console.log(userData)
       setIsAuthenticated(true);
 
   }
@@ -85,7 +86,7 @@ function App() {
             <PrivateRoute path='/watchlist' component= {Watch} user={currentUser}  />
             
             <PrivateRoute path = '/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
-            <PrivateRoute path = '/form' component={Form} user={currentUser} />
+            <PrivateRoute path = '/form' component={Form} user={currentUser} handleLogout={handleLogout} />
             <PrivateRoute path = '/details/:id' component={(props) => <FavDetail {...props} user={currentUser} /> } />
             
             

@@ -26,14 +26,18 @@ const handleEmail = (e) => {
 //===========SUBMIT-FORM=====================//
 const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(e.target)
     const payload = {name, email }
-    let url = CONNECTION_URI+"/api/profiles"
+    let url = CONNECTION_URI+"/api/users/"+ props.user.id
     console.log(`Yo - database ${url} is working!!`)   
     await setAuthToken(localStorage.getItem("jwtToken"))
     axios.put(url, payload)
     .then( res => {
         console.log(res.data);
-        props.history.push('/profiles')
+        // props.setCurrentUser(res.data.user)
+        alert('You will now be logged out, please login with new credentials')
+        props.handleLogout()
+        props.history.push('/login')
     })
     .catch(err => {
         console.log(err)
